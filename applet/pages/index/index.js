@@ -27,6 +27,7 @@ Page({
   },
   onTapConnect() {
     socket.connect();
+    socket.emit('hi', 'hello');
   },
   onTapDisconnect() {
     socket.disconnect();
