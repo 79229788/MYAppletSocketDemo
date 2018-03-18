@@ -30,6 +30,6 @@ Page({
   },
   onTapDisconnect() {
     socket.disconnect();
-    this.setData({message: ''});
+    this.setData({message: 'no message'});
   },
 });
