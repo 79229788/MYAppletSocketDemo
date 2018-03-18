@@ -1,6 +1,6 @@
 import io from '/library/myapp-socket-io/index';
 
-const socket = io('http://localhost:8888', {
+const socket = io('ws://localhost:8888', {
   autoConnect: false
 });
 
@@ -20,7 +20,6 @@ Page({
       this.setData({statuts: 'connect error'});
       console.log(error);
     });
-    socket.emit('hi', 'hello');
     socket.on('say', (message) => {
       this.setData({message: message});
     });
