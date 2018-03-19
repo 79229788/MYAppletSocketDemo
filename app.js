@@ -1,5 +1,5 @@
 const http = require('http');
-const server = http.createServer().listen(1337);
+const server = http.createServer().listen(8888);
 const io = require('socket.io')(server);
 
 let index = 0;
