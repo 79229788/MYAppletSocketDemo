@@ -1,6 +1,6 @@
 import io from '/library/myapp-socket-io/index';
 
-const socket = io('http://localhost:8888', {
+const socket = io('http://dev.canzhu.icomber.net', {
   autoConnect: false
 });
 
@@ -23,6 +23,12 @@ Page({
     socket.on('say', (message) => {
       this.setData({message: message});
     });
+    my.getStorageInfo({
+      success: function(res) {
+        console.log(res.keys);
+      }
+    });
+    my.clearStorageSync();
   },
   onTapConnect() {
     socket.connect();

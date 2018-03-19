@@ -1,11 +1,11 @@
 const http = require('http');
-const server = http.createServer().listen(8888);
+const server = http.createServer().listen(1337);
 const io = require('socket.io')(server);
 
 let index = 0;
 io.on('connection', function(socket) {
   socket.on('hi', function(message) {
-    console.log(message);
+    console.log(message, index);
     socket.emit('say', `hello too${index}!`);
     index ++;
   })
