@@ -1,6 +1,6 @@
 import io from '/library/myapp-socket-io/index';
 
-const socket = io('http://localhost:8888/', {
+const socket = io('http://localhost:8888', {
   autoConnect: false
 });
 
