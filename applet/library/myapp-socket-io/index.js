@@ -714,9 +714,7 @@ module.exports = function(t) {
       this.subs = [a(t, "open", c(this, "onopen")), a(t, "packet", c(this, "onpacket")), a(t, "close", c(this, "onclose"))]
     }
   }, r.prototype.open = r.prototype.connect = function() {
-    return this.connected
-      ? this
-      : (this.subEvents(), this.io.open(), "open" === this.io.readyState && this.onopen(), this.emit("connecting"), this)
+    return this.connected ? this : (this.subEvents(), this.io.open(), "open" === this.io.readyState && this.onopen(), this.emit("connecting"), this)
   }, r.prototype.send = function() {
     var t = s(arguments);
     return t.unshift("message"), this.emit.apply(this, t), this
